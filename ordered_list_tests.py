@@ -37,6 +37,7 @@ class TestLab4(unittest.TestCase):
         self.assertEqual(o.index(3), 2)
         self.assertEqual(o.index(4), 3)
         self.assertEqual(o.index(5), 4)
+        self.assertEqual(o.index(6), None)
 
         # Testing if search method works
         self.assertTrue(o.search(1))
@@ -89,6 +90,10 @@ class TestLab4(unittest.TestCase):
         with self.assertRaises(IndexError):
             o.remove(1)
         
+
+        
+        
+        # Testing remove
         o.add(1)
         self.assertEqual(o.remove(2), False)
         self.assertEqual(o.remove(1), True)
@@ -97,6 +102,13 @@ class TestLab4(unittest.TestCase):
         o.add(2)
         self.assertEqual(o.remove(2), True)
         o.remove(1)
+
+        o.add(1)
+        o.add(2)
+        o.add(3)
+        self.assertEqual(o.remove(2), True)
+        o.remove(1)
+        o.remove(3)
 
         
         # Testing add method

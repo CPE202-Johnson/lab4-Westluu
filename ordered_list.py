@@ -117,7 +117,7 @@ class OrderedList:
         '''Removes and returns item at index (assuming head of list is index 0).
            If index is negative or >= size of list, raises IndexError
            MUST have O(n) average-case performance'''
-        if index < 0 or index >= self.size():
+        if index < 0 or index > self.size():
             raise IndexError
         
         if self.is_empty():
@@ -129,7 +129,6 @@ class OrderedList:
         while i < index:
             current = current.next
             i += 1
-        
         item = current.item
         self.remove(item)
         return item
