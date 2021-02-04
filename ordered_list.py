@@ -126,6 +126,7 @@ class OrderedList:
         current = self.head
         i = 0
         
+        
         while i < index:
             current = current.next
             i += 1

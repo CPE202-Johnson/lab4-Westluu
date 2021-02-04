@@ -130,8 +130,5 @@ class TestLab4(unittest.TestCase):
         
         self.assertTrue(Node(1) < Node(2))
 
-
-
-
 if __name__ == '__main__': 
     unittest.main()
