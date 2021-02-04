@@ -45,7 +45,7 @@ class OrderedList:
         
         while current != None:
             if compare < current:
-                compare.next = currrent
+                compare.next = current
                 compare.prev = current.prev
                 current.prev.next = compare
                 current.prev = compare
@@ -117,10 +117,10 @@ class OrderedList:
         '''Removes and returns item at index (assuming head of list is index 0).
            If index is negative or >= size of list, raises IndexError
            MUST have O(n) average-case performance'''
-        if index < 0 or index > self.size():
+        if self.is_empty():
             raise IndexError
         
-        if self.is_empty():
+        if index < 0 or index >= self.size():
             raise IndexError
         
         current = self.head

@@ -90,9 +90,6 @@ class TestLab4(unittest.TestCase):
         with self.assertRaises(IndexError):
             o.remove(1)
         
-
-        
-        
         # Testing remove
         o.add(1)
         self.assertEqual(o.remove(2), False)
@@ -107,6 +104,7 @@ class TestLab4(unittest.TestCase):
         o.add(2)
         o.add(3)
         self.assertEqual(o.remove(2), True)
+        self.assertEqual(o.remove(4), False)
         o.remove(1)
         o.remove(3)
 
@@ -115,13 +113,12 @@ class TestLab4(unittest.TestCase):
         self.assertTrue(o.add(1))
         self.assertTrue(o.add(2))
         self.assertTrue(o.add(3))
-        self.assertTrue(o.add(4))
         self.assertTrue(o.add(5))
+        self.assertTrue(o.add(4))
 
         self.assertFalse(o.add(1))
         self.assertFalse(o.add(2))
         self.assertFalse(o.add(3))
-        self.assertFalse(o.add(4))
         self.assertFalse(o.add(5))
 
     def test_node(self):
