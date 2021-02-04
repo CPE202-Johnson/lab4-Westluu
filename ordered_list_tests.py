@@ -29,6 +29,7 @@ class TestLab4(unittest.TestCase):
         self.assertEqual(o.size(), 5)
         self.assertEqual(o.python_list(), [1,2,3,4,5])
         self.assertEqual(o.python_list_reversed(), [5,4,3,2,1])
+        self.assertFalse(o.add(1), False)
         
         # Testing if items are at correct index
         self.assertEqual(o.index(1), 0)
@@ -77,6 +78,9 @@ class TestLab4(unittest.TestCase):
             o.pop(1)
         
         with self.assertRaises(IndexError):
+            o.pop(0)
+        
+        with self.assertRaises(IndexError):
             o.search(3)
         
         with self.assertRaises(IndexError):
@@ -85,11 +89,25 @@ class TestLab4(unittest.TestCase):
         with self.assertRaises(IndexError):
             o.remove(1)
         
+        # Testing add method
+        self.assertTrue(o.add(1))
+        self.assertTrue(o.add(2))
+        self.assertTrue(o.add(3))
+        self.assertTrue(o.add(4))
+        self.assertTrue(o.add(5))
+
+        self.assertFalse(o.add(1))
+        self.assertFalse(o.add(2))
+        self.assertFalse(o.add(3))
+        self.assertFalse(o.add(4))
+        self.assertFalse(o.add(5))
+
     def test_node(self):
         with self.assertRaises(ValueError):
             print(Node(1) < 1)
         
         self.assertTrue(Node(1) < Node(2))
+
 
 
 

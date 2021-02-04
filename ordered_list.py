@@ -41,6 +41,7 @@ class OrderedList:
         compare = Node(item)
         if self.is_empty():
             self.head = compare
+            return True
         
         while current != None:
             if compare < current:
@@ -100,6 +101,7 @@ class OrderedList:
         index = 0
         if self.is_empty():
             raise IndexError
+        
         current = self.head
         while current != None:
             if current.item == item:
@@ -210,28 +212,3 @@ class OrderedList:
         recur = self.size() + count
         self.head = current
         return recur
-
-if __name__ == '__main__':
-    o = OrderedList()
-    o.add(1)
-    o.add(2)
-    o.add(3)
-    o.add(4)
-    o.add(5)
-    print(o.size())
-    # print(o.pop(12))
-    print(o.remove(1))
-    print(o.python_list())
-    print(Node(1) < 1)
-    # o.add(2)
-    # o.add(3)
-    # print(o.python_list())
-    # print(o.python_list())
-    # print('size')
-    # print(o.size())
-    # print('head')
-    # print(o.head.item)
-    # print(o.python_list_reversed())
-    # print(o.search(5))
-    # print(o.remove(2))
-    # print(o.remove(3))
