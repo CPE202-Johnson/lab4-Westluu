@@ -93,6 +93,11 @@ class TestLab4(unittest.TestCase):
         self.assertEqual(o.remove(2), False)
         self.assertEqual(o.remove(1), True)
 
+        o.add(1)
+        o.add(2)
+        self.assertEqual(o.remove(2), True)
+        o.remove(1)
+
         
         # Testing add method
         self.assertTrue(o.add(1))
