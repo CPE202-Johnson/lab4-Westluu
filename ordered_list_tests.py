@@ -55,6 +55,9 @@ class TestLab4(unittest.TestCase):
         # Testing pop and size   
         self.assertEqual(o.pop(0), 1)
         self.assertEqual(o.size(), 4)
+
+        with self.assertRaises(IndexError):
+            o.pop(9)
         
         self.assertEqual(o.pop(0), 2)
         self.assertEqual(o.size(), 3)

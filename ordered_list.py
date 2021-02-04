@@ -129,6 +129,7 @@ class OrderedList:
         while i < index:
             current = current.next
             i += 1
+        
         item = current.item
         self.remove(item)
         return item
