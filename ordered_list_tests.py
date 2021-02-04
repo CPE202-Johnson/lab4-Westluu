@@ -89,6 +89,11 @@ class TestLab4(unittest.TestCase):
         with self.assertRaises(IndexError):
             o.remove(1)
         
+        o.add(1)
+        self.assertEqual(o.remove(2), False)
+        self.assertEqual(o.remove(1), True)
+
+        
         # Testing add method
         self.assertTrue(o.add(1))
         self.assertTrue(o.add(2))
