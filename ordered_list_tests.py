@@ -30,6 +30,8 @@ class TestLab4(unittest.TestCase):
         self.assertEqual(o.python_list(), [1,2,3,4,5])
         self.assertEqual(o.python_list_reversed(), [5,4,3,2,1])
         self.assertFalse(o.add(1), False)
+        self.assertEqual(o.pop(4), 5)
+        o.add(5)
         
         # Testing if items are at correct index
         self.assertEqual(o.index(1), 0)
