@@ -216,9 +216,3 @@ class OrderedList:
         self.head = current
         return recur
 
-if __name__ == "__main__":
-    o = OrderedList()
-    o.add(10)
-    o.add(15)
-    o.add(5)
-    print(o.python_list())
