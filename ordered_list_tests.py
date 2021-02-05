@@ -79,6 +79,7 @@ class TestLab4(unittest.TestCase):
 
         # Testing if empty
         self.assertTrue(o.is_empty())
+        self.assertFalse(o.search(1))
 
         with self.assertRaises(IndexError):
             o.pop(1)

@@ -140,17 +140,21 @@ class OrderedList:
            To practice recursion, this method must call a RECURSIVE method that
            will search the list
            MUST have O(n) average-case performance'''
-        current = self.head
-        if self.head.item == item:
-            return True
-        
-        if self.head.next == None:
+        if self.is_empty():
             return False
-        
-        self.head = self.head.next
-        recur = self.search(item)
-        self.head = current
-        return recur
+            
+        else:
+            current = self.head
+            if self.head.item == item:
+                return True
+            
+            if self.head.next == None:
+                return False
+            
+            self.head = self.head.next
+            recur = self.search(item)
+            self.head = current
+            return recur
 
     def python_list(self):
         '''Return a Python list representation of OrderedList, from head to tail
