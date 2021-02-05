@@ -92,9 +92,6 @@ class TestLab4(unittest.TestCase):
         with self.assertRaises(IndexError):
             o.index(1)
         
-        with self.assertRaises(IndexError):
-            o.remove(1)
-        
         # Testing remove
         o.add(1)
         self.assertEqual(o.remove(2), False)

@@ -69,8 +69,6 @@ class OrderedList:
         '''Removes the first occurrence of an item from OrderedList. If item is removed (was in the list) 
           returns True.  If item was not removed (was not in the list) returns False
            MUST have O(n) average-case performance'''
-        if self.is_empty():
-            raise IndexError
         current = self.head
         
         if self.size() == 1:
