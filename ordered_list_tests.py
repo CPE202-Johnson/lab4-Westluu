@@ -87,9 +87,6 @@ class TestLab4(unittest.TestCase):
             o.pop(0)
         
         with self.assertRaises(IndexError):
-            o.search(3)
-        
-        with self.assertRaises(IndexError):
             o.index(1)
         
         # Testing remove

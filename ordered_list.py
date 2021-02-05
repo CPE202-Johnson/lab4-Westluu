@@ -140,10 +140,6 @@ class OrderedList:
            To practice recursion, this method must call a RECURSIVE method that
            will search the list
            MUST have O(n) average-case performance'''
-        
-        if self.is_empty():
-            raise IndexError
-        
         current = self.head
         if self.head.item == item:
             return True
