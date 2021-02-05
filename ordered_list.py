@@ -47,8 +47,12 @@ class OrderedList:
             if compare < current:
                 compare.next = current
                 compare.prev = current.prev
-                current.prev.next = compare
-                current.prev = compare
+                if current.prev == None:
+                    current.prev = compare
+                    self.head = compare
+                else:
+                    current.prev.next = compare
+                    current.prev = compare
                 return True
         
             if current == compare:
@@ -125,10 +129,10 @@ class OrderedList:
         
         current = self.head
         i = 0
+        
         while i < index:
             current = current.next
             i += 1
-        
         item = current.item
         self.remove(item)
         return item
@@ -211,3 +215,10 @@ class OrderedList:
         recur = self.size() + count
         self.head = current
         return recur
+
+if __name__ == "__main__":
+    o = OrderedList()
+    o.add(10)
+    o.add(15)
+    o.add(5)
+    print(o.python_list())

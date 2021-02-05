@@ -127,10 +127,18 @@ class TestLab4(unittest.TestCase):
         self.assertFalse(o.add(5))
 
     def test_node(self):
+        o = OrderedList()
+        
         with self.assertRaises(ValueError):
             print(Node(1) < 1)
         
         self.assertTrue(Node(1) < Node(2))
+        o.add(10)
+        o.add(20)
+        self.assertTrue(o.add(5))
+        self.assertTrue(o.add(15))
+
+        
 
 if __name__ == '__main__': 
     unittest.main()
