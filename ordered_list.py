@@ -124,10 +124,7 @@ class OrderedList:
             raise IndexError
         
         current = self.head
-        i = 0
-        
-        
-        while i < index:
+        for i in range(index):
             current = current.next
             i += 1
         
